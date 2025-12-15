@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Knowvia Technologies Solution Builder - Configure your custom digital solution or describe your problem and let us propose the best technology solution.">
+    <meta name="keywords"
+        content="Custom Software, AI Solutions, Mobile Apps, IoT Systems, Web Development, Zimbabwe Tech">
+    <title>Solution Builder | Knowvia Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="solution-builder.css">
+    <!-- EmailJS SDK for form submission -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">KNOWVIATECHNOLOGIES</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="solution-builder.html" class="nav-link active">Get Started</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="builder-hero">
+        <div class="hero-bg-effects">
+            <div class="scanline"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="builder-hero-content">
+            <span class="section-tag">// INTELLIGENT SOLUTION BUILDER</span>
+            <h1 class="builder-title">Build Your <span class="accent">Digital Future</span></h1>
+            <p class="builder-subtitle">Select and configure your ideal solution, or describe your challenge and let us
+                architect the perfect technology stack for you.</p>
+        </div>
+    </section>
+
+    <!-- Main Builder Section -->
+    <section class="builder-main">
+        <div class="builder-container">
+            <!-- Left Panel - Configuration -->
+            <div class="builder-config">
+
+                <!-- Step 1: Entry Path Selection -->
+                <div class="builder-step" id="stepEntryPath">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                        <h2>Choose Your Path</h2>
+                    </div>
+                    <div class="entry-path-grid">
+                        <button class="entry-path-card active" data-path="product">
+                            <div class="path-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+                            <h3>I Know What I Want</h3>
+                            <p>Select and configure a specific digital product</p>
+                        </button>
+                        <button class="entry-path-card" data-path="problem">
+                            <div class="path-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                                </svg>
+                            </div>
+                            <h3>I Have a Problem</h3>
+                            <p>Describe your challenge, we'll propose the solution</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Solution Type Selection (Product Path) -->
+                <div class="builder-step" id="stepSolutionType">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <h2>Select Solution Type</h2>
+                    </div>
+                    <div class="solution-type-tabs">
+                        <button class="solution-tab active" data-solution="website">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            <span>Website</span>
+                        </button>
+                        <button class="solution-tab" data-solution="mobile">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                            </svg>
+                            <span>Mobile App</span>
+                        </button>
+                        <button class="solution-tab" data-solution="ai">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z" />
+                                <circle cx="8" cy="14" r="2" />
+                                <circle cx="16" cy="14" r="2" />
+                            </svg>
+                            <span>AI Solution</span>
+                        </button>
+                        <button class="solution-tab" data-solution="iot">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                                <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                                <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                                <circle cx="12" cy="20" r="1" />
+                            </svg>
+                            <span>IoT System</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website Development Configurator -->
+                <div class="solution-configurator active" id="configWebsite">
+                    <div class="config-header">
+                        <h3>Website Development</h3>
+                        <span class="base-price">Base: $0</span>
+                    </div>
+                    <p class="config-description">Select the features you need for your website project.</p>
+
+                    <div class="feature-grid">
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="landing" data-price="30">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Landing Page</span>
+                            <span class="feature-price">+$30</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="about" data-price="25">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">About Us Page</span>
+                            <span class="feature-price">+$25</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="services" data-price="35">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Services Page</span>
+                            <span class="feature-price">+$35</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="contact" data-price="40">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Contact Forms</span>
+                            <span class="feature-price">+$40</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="blog" data-price="80">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Blog / CMS</span>
+                            <span class="feature-price">+$80</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="admin" data-price="150">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Admin Dashboard</span>
+                            <span class="feature-price">+$150</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="auth" data-price="100">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">User Authentication</span>
+                            <span class="feature-price">+$100</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="ecommerce" data-price="250">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">E-commerce Functionality</span>
+                            <span class="feature-price">+$250</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="payments" data-price="120">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Payment Integration</span>
+                            <span class="feature-price">+$120</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="seo" data-price="60">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">SEO Optimization</span>
+                            <span class="feature-price">+$60</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="web_feature" value="api" data-price="100">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">API Integrations</span>
+                            <span class="feature-price">+$100</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="webDescription">Additional Requirements (Optional)</label>
+                        <textarea id="webDescription" name="web_description" rows="4"
+                            placeholder="Describe any specific requirements, design preferences, or functionality you need..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Mobile App Configurator -->
+                <div class="solution-configurator" id="configMobile">
+                    <div class="config-header">
+                        <h3>Mobile Application</h3>
+                        <span class="base-price">Base: $0</span>
+                    </div>
+                    <p class="config-description">Configure your mobile application features and platform.</p>
+
+                    <div class="platform-selector">
+                        <h4>Target Platform</h4>
+                        <div class="platform-options">
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="android" data-price="0">
+                                <span class="option-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M17.523 2.376a.5.5 0 0 0-.847-.5l-1.316 2.108a6.974 6.974 0 0 0-6.72 0L7.324 1.876a.5.5 0 0 0-.847.5L7.688 4.4A6.983 6.983 0 0 0 5 10v1h14v-1a6.983 6.983 0 0 0-2.688-5.6l1.211-2.024zM9 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7H5zm-2 0a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1zm18 0a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1z" />
+                                    </svg>
+                                    <span>Android</span>
+                                </span>
+                            </label>
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="ios" data-price="50">
+                                <span class="option-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                                    </svg>
+                                    <span>iOS (+$50)</span>
+                                </span>
+                            </label>
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="cross" data-price="100" checked>
+                                <span class="option-box active">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                        <line x1="12" y1="18" x2="12.01" y2="18" />
+                                    </svg>
+                                    <span>Cross-Platform (+$100)</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="feature-grid">
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="auth" data-price="80">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">User Authentication</span>
+                            <span class="feature-price">+$80</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="profiles" data-price="60">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">User Profiles</span>
+                            <span class="feature-price">+$60</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="dashboard" data-price="70">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Dashboard / Home Screen</span>
+                            <span class="feature-price">+$70</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="push" data-price="50">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Push Notifications</span>
+                            <span class="feature-price">+$50</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="realtime" data-price="120">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Real-Time Data</span>
+                            <span class="feature-price">+$120</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="chat" data-price="150">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">In-App Chat</span>
+                            <span class="feature-price">+$150</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="payments" data-price="130">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Payments & Subscriptions</span>
+                            <span class="feature-price">+$130</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="gps" data-price="80">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Location / GPS</span>
+                            <span class="feature-price">+$80</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="offline" data-price="100">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Offline Mode</span>
+                            <span class="feature-price">+$100</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="admin" data-price="180">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Admin Dashboard</span>
+                            <span class="feature-price">+$180</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="mobile_feature" value="analytics" data-price="70">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Analytics</span>
+                            <span class="feature-price">+$70</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileDescription">Additional Requirements (Optional)</label>
+                        <textarea id="mobileDescription" name="mobile_description" rows="4"
+                            placeholder="Describe your app's purpose, target audience, and any specific features you need..."></textarea>
+                    </div>
+                </div>
+
+                <!-- AI Solution Configurator -->
+                <div class="solution-configurator" id="configAI">
+                    <div class="config-header">
+                        <h3>AI Solution</h3>
+                        <span class="base-price">Base: $80</span>
+                    </div>
+                    <p class="config-description">Tell us about the AI system you need. Pricing depends on complexity
+                        and will be finalized after assessment.</p>
+
+                    <div class="option-group">
+                        <h4>Type of AI Needed</h4>
+                        <div class="option-grid">
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_type" value="ml">
+                                <span class="option-box">Machine Learning</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_type" value="nlp">
+                                <span class="option-box">Natural Language Processing</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_type" value="cv">
+                                <span class="option-box">Computer Vision</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_type" value="predictive">
+                                <span class="option-box">Predictive Analytics</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_type" value="recommendation">
+                                <span class="option-box">Recommendation Systems</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_type" value="chatbot">
+                                <span class="option-box">Chatbots / Virtual Assistants</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4>Data Source</h4>
+                        <div class="option-grid">
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_data" value="user">
+                                <span class="option-box">User Data</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_data" value="documents">
+                                <span class="option-box">Documents</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_data" value="images">
+                                <span class="option-box">Images / Video</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_data" value="sensor">
+                                <span class="option-box">Sensor Data</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_data" value="api">
+                                <span class="option-box">APIs / Databases</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4>Expected Outcome</h4>
+                        <div class="option-grid">
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_outcome" value="automation">
+                                <span class="option-box">Automation</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_outcome" value="insights">
+                                <span class="option-box">Insights</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_outcome" value="predictions">
+                                <span class="option-box">Predictions</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_outcome" value="fraud">
+                                <span class="option-box">Fraud Detection</span>
+                            </label>
+                            <label class="option-checkbox">
+                                <input type="checkbox" name="ai_outcome" value="decision">
+                                <span class="option-box">Decision Support</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aiDescription">Describe the AI problem you want solved *</label>
+                        <textarea id="aiDescription" name="ai_description" rows="6"
+                            placeholder="Explain the challenge you are facing, the data you have (if any), what decisions you want the system to help with, and your desired results."
+                            required></textarea>
+                    </div>
+                </div>
+
+                <!-- IoT System Configurator -->
+                <div class="solution-configurator" id="configIoT">
+                    <div class="config-header">
+                        <h3>IoT System</h3>
+                        <span class="base-price">Base: $100</span>
+                    </div>
+                    <p class="config-description">Configure your Internet of Things solution. Final pricing depends on
+                        hardware and complexity.</p>
+
+                    <div class="feature-grid">
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="sensors" data-price="80">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Sensors & Data Collection</span>
+                            <span class="feature-price">+$80</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="monitoring" data-price="100">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Device Monitoring</span>
+                            <span class="feature-price">+$100</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="dashboard" data-price="120">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Real-Time Dashboards</span>
+                            <span class="feature-price">+$120</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="remote" data-price="150">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Remote Control / Automation</span>
+                            <span class="feature-price">+$150</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="alerts" data-price="60">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Alerts & Notifications</span>
+                            <span class="feature-price">+$60</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="cloud" data-price="100">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Cloud Integration</span>
+                            <span class="feature-price">+$100</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="edge" data-price="180">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Edge Computing</span>
+                            <span class="feature-price">+$180</span>
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="iot_feature" value="mobile" data-price="130">
+                            <span class="checkbox-custom"></span>
+                            <span class="feature-label">Mobile App Integration</span>
+                            <span class="feature-price">+$130</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="iotDescription">Describe the IoT system you need *</label>
+                        <textarea id="iotDescription" name="iot_description" rows="6"
+                            placeholder="Describe the environment, devices, sensors, connectivity needs, and what problem the IoT system should solve."
+                            required></textarea>
+                    </div>
+                </div>
+
+                <!-- Problem-First Section -->
+                <div class="problem-section" id="problemSection">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <h2>Describe Your Challenge</h2>
+                    </div>
+                    <p class="section-description">Tell us about your problem, and we'll propose the best technology
+                        solution for you.</p>
+
+                    <div class="form-group">
+                        <label for="problemDescription">What problem are you facing? *</label>
+                        <textarea id="problemDescription" name="problem_description" rows="6"
+                            placeholder="Describe your business or operational problem, current process, challenges, pain points, and what you wish could be improved."
+                            required></textarea>
+                    </div>
+
+                    <div class="problem-details-grid">
+                        <div class="form-group">
+                            <label for="industry">Industry / Sector *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select your industry</option>
+                                <option value="agriculture">Agriculture</option>
+                                <option value="education">Education</option>
+                                <option value="finance">Finance & Banking</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="hospitality">Hospitality & Tourism</option>
+                                <option value="logistics">Logistics & Transport</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="mining">Mining</option>
+                                <option value="retail">Retail & E-commerce</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="technology">Technology</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentTools">Current Tools (if any)</label>
+                            <input type="text" id="currentTools" name="current_tools"
+                                placeholder="e.g., Excel, WhatsApp, manual processes...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="scale">Scale *</label>
+                            <select id="scale" name="scale" required>
+                                <option value="">Select scale</option>
+                                <option value="individual">Individual / Freelancer</option>
+                                <option value="sme">Small-Medium Enterprise (SME)</option>
+                                <option value="enterprise">Enterprise / Large Organization</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">Urgency / Timeline *</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select timeline</option>
+                                <option value="urgent">Urgent (Within 2 weeks)</option>
+                                <option value="soon">Soon (1-2 months)</option>
+                                <option value="planned">Planned (3-6 months)</option>
+                                <option value="exploring">Just Exploring</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="solution-recommendation">
+                        <div class="recommendation-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                            </svg>
+                            <span>Knowvia Technologies will analyze your request and propose:</span>
+                        </div>
+                        <div class="recommendation-options">
+                            <span>Web Solution</span>
+                            <span>Mobile App</span>
+                            <span>AI System</span>
+                            <span>IoT System</span>
+                            <span>Hybrid Solution</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Contact Details -->
+                <div class="builder-step" id="stepContact">
+                    <div class="step-header">
+                        <span class="step-number" id="contactStepNumber">03</span>
+                        <h2>Your Contact Details</h2>
+                    </div>
+
+                    <div class="contact-form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="full_name" placeholder="Enter your full name"
+                                required>
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address *</label>
+                            <input type="email" id="emailAddress" name="email" placeholder="Enter your email" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+263 XX XXX XXXX" required>
+                            <span class="form-error" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyName">Company Name (Optional)</label>
+                            <input type="text" id="companyName" name="company"
+                                placeholder="Your company or organization">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <button type="button" class="submit-request-btn" id="submitRequest">
+                        <span>Submit Request</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    </button>
+
+                    <div class="form-success" id="formSuccess">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <div>
+                            <h4>Request Submitted Successfully!</h4>
+                            <p>Thank you. Our team will analyze your request and contact you with the best solution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Cost Estimation -->
+            <div class="cost-panel" id="costPanel">
+                <div class="cost-panel-inner">
+                    <div class="cost-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                        <h3>Estimated Cost</h3>
+                    </div>
+
+                    <div class="cost-breakdown">
+                        <div class="cost-line">
+                            <span>Solution Type</span>
+                            <span id="solutionTypeName">Website Development</span>
+                        </div>
+                        <div class="cost-line">
+                            <span>Base Cost</span>
+                            <span id="baseCost">$120</span>
+                        </div>
+                        <div class="cost-line" id="platformCostLine" style="display: none;">
+                            <span>Platform</span>
+                            <span id="platformCost">$0</span>
+                        </div>
+                        <div class="cost-line">
+                            <span>Selected Features</span>
+                            <span id="featuresCost">$0</span>
+                        </div>
+                        <div class="cost-divider"></div>
+                        <div class="cost-line total">
+                            <span>Estimated Total</span>
+                            <span id="totalCost">$120</span>
+                        </div>
+                    </div>
+
+                    <div class="selected-features" id="selectedFeatures">
+                        <h4>Selected Features</h4>
+                        <ul id="featuresList">
+                            <li class="no-features">No features selected yet</li>
+                        </ul>
+                    </div>
+
+                    <div class="cost-disclaimer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                        <p>This is an estimated cost. Final pricing will be determined after technical assessment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <div class="container">
+            <p>&copy; 2025 Knowvia Technologies. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="solution-builder.js"></script>
+</body>
+
+</html>
